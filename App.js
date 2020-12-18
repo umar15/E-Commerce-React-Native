@@ -34,14 +34,45 @@ const Stack = createStackNavigator();
 export default function App() {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator>
+			<Stack.Navigator
+				screenOptions={{
+					headerStyle: {
+						backgroundColor: "#002240",
+					},
+					headerTintColor: "#ffffff",
+				}}
+			>
 				<Stack.Screen name="Home" component={HomeScreen} />
-				<Stack.Screen name="Products" component={ProductList} />
-				<Stack.Screen name="Employees" component={EmployeeList} />
-				<Stack.Screen name="Orders" component={OrderList} />
-				<Stack.Screen name="ProductDetails" component={ProductDetails} />
-				<Stack.Screen name="EmployeeDetails" component={EmployeeDetails} />
-				<Stack.Screen name="OrderDetails" component={OrderDetails} />
+				<Stack.Screen
+					options={{ title: "Products" }}
+					name="Products"
+					component={ProductList}
+				/>
+				<Stack.Screen
+					options={{ title: "Employees" }}
+					name="Employees"
+					component={EmployeeList}
+				/>
+				<Stack.Screen
+					options={{ title: "Orders" }}
+					name="Orders"
+					component={OrderList}
+				/>
+				<Stack.Screen
+					options={{ title: "Product Details" }}
+					name="ProductDetails"
+					component={ProductDetails}
+				/>
+				<Stack.Screen
+					options={{ title: "Employee Details" }}
+					name="EmployeeDetails"
+					component={EmployeeDetails}
+				/>
+				<Stack.Screen
+					options={{ title: "Order Details" }}
+					name="OrderDetails"
+					component={OrderDetails}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
